@@ -17,12 +17,20 @@ public class LeafGroundAssignLink {
 		
 		driver.manage().window().maximize();
 		
-		driver.findElement(By.linkText("Find where am supposed to go without clicking me?")).getAttribute("href");
+		driver.findElement(By.linkText("Find where am supposed to go without clicking me?")).getAttribute("href");	
 		
-	//	driver.findElement(By.linkText("Find where am supposed to go without clicking me?")).click();
+		String attribute = driver.findElement(By.linkText("Find where am supposed to go without clicking me?")).getAttribute("href");
 		
-		System.out.println(driver.findElement(By.linkText("Find where am supposed to go without clicking me?")).getAttribute("href"));
+		System.out.println(attribute);
 		
+		if (attribute.contains("leafground.com"))
+		{
+			driver.findElement(By.linkText("Find where am supposed to go without clicking me?")).click();
+			
+			System.out.println("Find where am I go to without clicking me Page launched");
+		}
+		else
+			System.out.println("Wrong page"); 
 	}	
 	
 }

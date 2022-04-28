@@ -17,11 +17,23 @@ public class LeafGroundAssignImage {
 		
 		driver.manage().window().maximize();
 		
-		driver.findElement(By.xpath("//img[@src='../images/home.png']")).isDisplayed();
-		
 		System.out.println(driver.findElement(By.xpath("//img[@src='../images/home.png']")).isDisplayed());
 		System.out.println(driver.findElement(By.xpath("//img[@src='../images/abcd.jpg']")).isDisplayed());
 		System.out.println(driver.findElement(By.xpath("//img[@src='../images/abcd.jpg']")).isEnabled());
+		
+		boolean displayed = driver.findElement(By.xpath("//img[@src='../images/home.png']")).isDisplayed();
+		
+		if (displayed == true)
+			{
+			driver.findElement(By.xpath("//img[@src='../images/home.png']")).click();
+			System.out.println("Home page launched");
+			}
+		else
+		{
+			System.out.println("Broken Image");
+		}
+		
+		
 		
 	}
 	
